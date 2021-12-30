@@ -1,3 +1,8 @@
+2021-12-30 Release 12.30.2021
+- Updated audit policy hashes
+- Updated supported Windows systems to include 11 and 2022 versions
+- Re-released to Puppet Forge
+
 2020-03-11 Release 3.11.2020-A
 - Updated to match removal of audit policies
 
