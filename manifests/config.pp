@@ -72,6 +72,7 @@ class advanced_audit_policy::config {
     'Other Privilege Use Events'=>'{0CCE922A-69AE-11D9-BED3-505054503030}',
     'Other System Events'=>'{0CCE9214-69AE-11D9-BED3-505054503030}',
     'Plug and Play Events'=>'{0CCE9248-69AE-11D9-BED3-505054503030}',
+    'PNP Activity' => '{0cce9248-69ae-11d9-bed3-505054503030}',
     'Process Creation'=>'{0CCE922B-69AE-11D9-BED3-505054503030}',
     'Process Termination'=>'{0CCE922C-69AE-11D9-BED3-505054503030}',
     'RPC Events'=>'{0CCE922E-69AE-11D9-BED3-505054503030}',
