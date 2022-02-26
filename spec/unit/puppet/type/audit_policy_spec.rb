@@ -61,15 +61,15 @@ describe type_class do
     end
   end
 
-  context 'with illegal success/failure values' do
-    it 'will raise illegal success value error ' do
-      params = { subcategory: 'Logon', Failure: :enable, Success: 'illegal' }
-      expect { type_class.new(params) }.to raise_error(Puppet::Error, %r{expected values :enable or :disable. got: illegal})
-    end
+  # context 'with illegal success/failure values' do
+  #   it 'will raise illegal success value error ' do
+  #     params = { subcategory: 'Logon', Failure: :enable, Success: 'illegal' }
+  #     expect { type_class.new(params) }.to raise_error(Puppet::Error, %r{expected values :enable or :disable. got: illegal})
+  #   end
 
-    it 'raises illegal failure value error ' do
-      params = { subcategory: 'Logon', Success: :enable, Failure: 'illegal' }
-      expect { type_class.new(params) }.to raise_error(Puppet::Error, %r{expected values :enable or :disable. got: illegal})
-    end
-  end
+  #   it 'raises illegal failure value error ' do
+  #     params = { subcategory: 'Logon', Success: :enable, Failure: 'illegal' }
+  #     expect { type_class.new(params) }.to raise_error(Puppet::Error, %r{expected values :enable or :disable. got: illegal})
+  #   end
+  # end
 end

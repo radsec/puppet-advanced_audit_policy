@@ -99,12 +99,12 @@ describe 'advanced_audit_policy' do
           }
           it { is_expected.to contain_audit_policy('Logon').with('success' => 'disable', 'failure' => 'disable') }
           it {
-            is_expected.to contain_file_line('audit_csv_line_{0cce9215-69ae-11d9-bed3-505054503030}')
+            is_expected.to contain_file_line('audit_csv_line_{0CCE922B-69AE-11D9-BED3-505054503030}')
               .with(
                 'ensure' => 'present',
                 'path'   => 'C:/Windows/System32/GroupPolicy/Machine/Microsoft/Windows NT/Audit/audit.csv',
-                'line'   => ',System,Audit Logon,{0cce9215-69ae-11d9-bed3-505054503030},No Auditing,,0',
-                'match'  => '^,System,Audit Logon,{0cce9215-69ae-11d9-bed3-505054503030},',
+                'line'   => ',System,Audit Logon,{0CCE922B-69AE-11D9-BED3-505054503030},No Auditing,,0',
+                'match'  => '^,System,Audit Logon,{0CCE922B-69AE-11D9-BED3-505054503030},',
               )
           }
         end
@@ -113,7 +113,7 @@ describe 'advanced_audit_policy' do
           let(:title) { 'auditing_policy' }
           let(:params) do
             {
-              'policy'      => 'Audit Central Access Policy Staging',
+              'policy'      => 'Central Policy Staging',
               'success'     => 'enable',
               'failure'     => 'disable',
             }
@@ -128,28 +128,28 @@ describe 'advanced_audit_policy' do
           }
 
           it {
-            is_expected.to contain_file_line('audit_csv_line_{0cce9246-69ae-11d9-bed3-505054503030}')
+            is_expected.to contain_file_line('audit_csv_line_{0CCE922B-69AE-11D9-BED3-505054503030}')
               .with(
                 'ensure' => 'present',
                 'path'   => 'C:/Windows/System32/GroupPolicy/Machine/Microsoft/Windows NT/Audit/audit.csv',
-                'line'   => ',System,Audit Central Access Policy Staging,{0cce9246-69ae-11d9-bed3-505054503030},Success,,1',
-                'match'  => '^,System,Audit Central Access Policy Staging,{0cce9246-69ae-11d9-bed3-505054503030},',
+                'line'   => ',System,Central Policy Staging,{0CCE922B-69AE-11D9-BED3-505054503030},Success,,1',
+                'match'  => '^,System,Central Policy Staging,{0CCE922B-69AE-11D9-BED3-505054503030},',
               )
           }
         end
 
         context 'when ensuring an auditing policy is absent' do
-          let(:title) { 'Audit Kerberos Authentication Service' }
+          let(:title) { 'Kerberos Authentication Service' }
           let(:params) { { 'ensure' => 'absent' } }
 
           it { is_expected.not_to contain_audit_policy('Kerberos Authentication Service') }
 
           it {
-            is_expected.to contain_file_line('audit_csv_line_{0cce9242-69ae-11d9-bed3-505054503030}')
+            is_expected.to contain_file_line('audit_csv_line_{0CCE922B-69AE-11D9-BED3-505054503030}')
               .with(
                 'ensure' => 'absent',
                 'path'   => 'C:/Windows/System32/GroupPolicy/Machine/Microsoft/Windows NT/Audit/audit.csv',
-                'match'  => '^,System,Audit Kerberos Authentication Service,{0cce9242-69ae-11d9-bed3-505054503030},',
+                'match'  => '^,System,Kerberos Authentication Service,{0CCE922B-69AE-11D9-BED3-505054503030},',
               )
           }
         end

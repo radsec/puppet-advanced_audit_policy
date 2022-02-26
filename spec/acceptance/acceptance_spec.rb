@@ -99,11 +99,11 @@ describe 'advanced_audit_policy class', unless: UNSUPPORTED_PLATFORMS.include?(f
     end
 
     describe command('auditpol /get /subcategory:"Computer Account Management" /r') do
-      its(:stdout) { is_expected.to match %r{,System,Computer Account Management,{0CCE9236-69AE-11D9-BED3-505054503030},Success and Failure,} }
+      its(:stdout) { is_expected.to match %r{,System,Computer Account Management,{0CCE922B-69AE-11D9-BED3-505054503030},Success and Failure,} }
     end
 
     describe command('auditpol /get /subcategory:"Other Account Management Events" /r') do
-      its(:stdout) { is_expected.to match %r{,System,Other Account Management Events,{0CCE923A-69AE-11D9-BED3-505054503030},Success and Failure,} }
+      its(:stdout) { is_expected.to match %r{,System,Other Account Management Events,{0CCE922B-69AE-11D9-BED3-505054503030},Success and Failure,} }
     end
 
     describe command('auditpol /get /subcategory:"Security Group Management" /r') do
@@ -119,8 +119,8 @@ describe 'advanced_audit_policy class', unless: UNSUPPORTED_PLATFORMS.include?(f
     describe file('C:/Windows/System32/GroupPolicy/Machine/Microsoft/Windows NT/Audit/audit.csv') do
       its(:content) { is_expected.to match %r{,System,Audit Credential Validation,{0cce923f-69ae-11d9-bed3-505054503030},Failure,,2} }
       its(:content) { is_expected.to match %r{,System,Audit Application Group Management,{0cce9239-69ae-11d9-bed3-505054503030},Success,,1} }
-      its(:content) { is_expected.to match %r{,System,Audit Computer Account Management,{0cce9236-69ae-11d9-bed3-505054503030},Success and Failure,,3} }
-      its(:content) { is_expected.to match %r{,System,Audit Other Account Management Events,{0cce923a-69ae-11d9-bed3-505054503030},Success and Failure,,3} }
+      its(:content) { is_expected.to match %r{,System,Audit Computer Account Management,{0CCE922B-69AE-11D9-BED3-505054503030},Success and Failure,,3} }
+      its(:content) { is_expected.to match %r{,System,Audit Other Account Management Events,{0CCE922B-69AE-11D9-BED3-505054503030},Success and Failure,,3} }
       its(:content) { is_expected.to match %r{,System,Audit Security Group Management,{0cce9237-69ae-11d9-bed3-505054503030},Success and Failure,,3} }
     end
 

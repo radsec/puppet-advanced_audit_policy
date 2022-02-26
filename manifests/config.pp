@@ -27,10 +27,11 @@ class advanced_audit_policy::config {
   # Build Data for auditing policy CSV
   # This hash is used to find the GUID matching this audit setting
   # https://msdn.microsoft.com/en-us/library/windows/desktop/bb648638(v=vs.85).aspx
-  $guid_lookup_hash =
-    {'Account Lockout'=>'{0CCE9217-69AE-11D9-BED3-505054503030}',
+  $guid_lookup_hash = {
+    'Account Lockout'=>'{0CCE9217-69AE-11D9-BED3-505054503030}',
     'Application Generated'=>'{0CCE9222-69AE-11D9-BED3-505054503030}',
     'Application Group Management'=>'{0CCE9239-69AE-11D9-BED3-505054503030}',
+    'Audit Logon'=>'{0CCE922B-69AE-11D9-BED3-505054503030}',
     'Audit Policy Change'=>'{0CCE922F-69AE-11D9-BED3-505054503030}',
     'Authentication Policy Change'=>'{0CCE9230-69AE-11D9-BED3-505054503030}',
     'Authorization Policy Change'=>'{0CCE9231-69AE-11D9-BED3-505054503030}',
@@ -72,7 +73,7 @@ class advanced_audit_policy::config {
     'Other Privilege Use Events'=>'{0CCE922A-69AE-11D9-BED3-505054503030}',
     'Other System Events'=>'{0CCE9214-69AE-11D9-BED3-505054503030}',
     'Plug and Play Events'=>'{0CCE9248-69AE-11D9-BED3-505054503030}',
-    'PNP Activity' => '{0cce9248-69ae-11d9-bed3-505054503030}',
+    'PNP Activity' => '{0CCE922B-69AE-11D9-BED3-505054503030}',
     'Process Creation'=>'{0CCE922B-69AE-11D9-BED3-505054503030}',
     'Process Termination'=>'{0CCE922C-69AE-11D9-BED3-505054503030}',
     'RPC Events'=>'{0CCE922E-69AE-11D9-BED3-505054503030}',
@@ -89,5 +90,4 @@ class advanced_audit_policy::config {
     'User / Device Claims'=>'{0CCE9247-69AE-11D9-BED3-505054503030}',
     'User Account Management'=>'{0CCE9235-69AE-11D9-BED3-505054503030}',
   }
-
 }
