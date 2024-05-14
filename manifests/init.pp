@@ -72,7 +72,7 @@ define advanced_audit_policy (
       ensure            => $ensure,
       path              => $audit_csv_file_path,
       match             => "^,System,${policy},${policy_guid},",
-      match_for_absense => true,
+      match_for_absence => true,
     }
   }
 
